@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="url" content="https://ocozzio.com">
+	<meta name="title" content="Title">
+	<meta name="description" content="Description">
+	<title>Test Page</title>
+	<style>
+		#codeContainer {
+		  display: block;
+		  white-space: pre;
+		  font-family: monospace;
+		  background-color: #f0f0f0;
+		  padding: 10px;
+		  border: 1px solid #ccc;
+		  margin-top: 20px;
+		  overflow-x: auto;
+		}
+	  </style>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+	<link rel="stylesheet" href="dist/css/style.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+</head>
+<body>
+  <button id="defaultButton">Default Block</button>
+  <button id="imageLeftButton">Img Left Text Right</button>
+  <button id="imageRightButton">Img Right Text Left</button>
+  <section id="codeDisplay">
+	<div class="container">
+		<div class="row">
+			<div class="col-6">
+				<code id="codeContainer">
+					&lt;!DOCTYPE html&gt;
+					&lt;html lang="en"&gt;
+					&lt;head&gt;
+					  &lt;meta charset="UTF-8"&gt;
+					  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+					  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+					  &lt;title&gt;Test Page&lt;/title&gt;
+					  
+					  &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"&gt;
+					  &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"&gt;
+					  &lt;link rel="stylesheet" href="dist/css/style.css"&gt;
+					  &lt;link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/&gt;
+					&lt;/head&gt;
+					&lt;body&gt;
+					  &lt;div id="codeContainer"&gt;&lt;/div&gt;
+					  
+					  <!-- Vendor scripts -->
+					  &lt;script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;
+					  &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"&gt;&lt;/script&gt;
+					  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"&gt;&lt;/script&gt;
+					  &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"&gt;&lt;/script&gt;
+					  &lt;script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"&gt;&lt;/script&gt;
+					  &lt;!-- &lt;script type="text/javascript" src="slick/slick.min.js"&gt;&lt;/script&gt; --&gt;
+					  &lt;script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"&gt;&lt;/script&gt;
+					  
+					  <!-- Custom scripts -->
+					  &lt;script src="dist/js/bundle.js"&gt;&lt;/script&gt;
+					&lt;/body&gt;
+					&lt;/html&gt;
+				</code>
+			</div>
+			<div class="col-6">
+				<div id="codeDemo">
+
+				</div>
+			</div>
+		</div>
+	</div>
+  </section>
+ 
+
+  <script>
+    const defaultButton = document.getElementById('defaultButton');
+    const imageLeftButton = document.getElementById('imageLeftButton');
+    const imageRightButton = document.getElementById('imageRightButton');
+    const codeContainer = document.getElementById('codeContainer');
+    const codeDemo = document.getElementById('codeDemo');
+
+    let accumulatedCode = '';
+
+    defaultButton.addEventListener('click', () => {
+      const defaultCode = `
+        <section id="#">
+          <div class="container-responsive">
+            <div class="row">
+              <div class="col-12">
+				<h2>Default</h2>
+				<p>Lorem lorem lorem lorem</p>
+				<a href="#" class="btn">Click Me</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+
+      accumulatedCode += defaultCode;
+      codeContainer.textContent = accumulatedCode;
+      codeDemo.innerHTML = accumulatedCode;
+    });
+
+    imageLeftButton.addEventListener('click', () => {
+      const imageLeftCode = `
+        <section id="#">
+          <div class="container-responsive">
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <img width="180px" src="https://t4.ftcdn.net/jpg/03/03/62/45/240_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg" alt="cool cat" />
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="text-wrapper">
+                  <h2>Header 2</h2>
+                  <p>Friend of Lorem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+
+      accumulatedCode += imageLeftCode;
+      codeContainer.textContent = accumulatedCode;
+      codeDemo.innerHTML = accumulatedCode;
+    });
+
+    imageRightButton.addEventListener('click', () => {
+      const imageRightCode = `
+        <section id="#">
+          <div class="container-responsive">
+            <div class="row">
+              <div class="col-12 col-sm-6">
+                <div class="text-wrapper">
+                  <h2>Header 2</h2>
+                  <p>Friend of Lorem</p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <img width="180px" src="https://t4.ftcdn.net/jpg/03/03/62/45/240_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg" alt="cool cat" />
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+
+      accumulatedCode += imageRightCode;
+      codeContainer.textContent = accumulatedCode;
+      codeDemo.innerHTML = accumulatedCode;
+    });
+  </script>
+	<!-- Vendor scripts -->
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<!-- <script type="text/javascript" src="slick/slick.min.js"></script> -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	
+
+	
+	<!-- Custom scripts -->
+	<script src="dist/js/bundle.js"></script>
+</body>
+</html>
